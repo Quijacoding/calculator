@@ -1,0 +1,58 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, rgb(250, 4, 250), rgba(0, 0, 255, 0.989)); /* Background*/
+}
+
+.calc {
+    display: grid;
+    justify-content: center; /* Set center on screen */
+    align-content: center; /* Set the content itself center of screen */ 
+    min-height: 100vh; /* Fill the height to be a certain number all the time away from the top */
+    grid-template-columns: repeat(4, 100px); /* Set to be four per row and the 100px is for the size of each thing */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* The first option is to set the first row to be 120px wide, but auto adjust for height. */
+}
+
+.span {
+  grid-column: span 2; /*Sets to take 2 columns */
+}
+
+.calc > button { /*Selects the button under the div of calc */
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none; /* Browsers put on default */
+    background-color: rgba(255, 255, 255, .75);
+  }
+
+.calc > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+  }
+
+  .screen {
+    grid-column: 1 / -1; /* Starts from the first part of grid and extends to the -1 aka last part of the grid. Also works with 1 / 5 */
+    background-color: rgba(0, 0, 0, .75);
+    display: flex; 
+    align-items: flex-end; /* Aligns to the very end */
+    justify-content: space-around; /* Gives space around the other item in the div */
+    flex-direction: column; /* Organized in column */
+    padding: 10px;
+    word-wrap: break-word; /* breaks into the next line */
+    word-break: break-all; /* avoids from breaking out */
+  }
+
+  .previous-num {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+  }
+
+  .current-num {
+    color: white;
+    font-size: 2.5rem;
+  }

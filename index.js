@@ -1,3 +1,7 @@
+const button = document.querySelectorAll("#bt")
+
+
+
 function add (a,b) {
     return a + b ;
 }
@@ -32,4 +36,24 @@ function operate (firstNum, operator, secNum) {
         return multi(first, sec)
     }
 
+}
+
+const display = document.querySelector("#current-nam")
+
+
+
+for (let i = 0; i < button.length; i++ ){
+    button[i].addEventListener("click", function() {
+
+        if (button[i].value === "clear") {
+            return display.innerHTML = "";
+        }
+        console.log(button[i].value)
+        display.innerHTML += button[i].value;
+
+        if (display.value === "-" || "x" || "+" || "divide" ) {
+            firstNum = display.value
+            return console.log(firstNum)
+        }
+    })
 }
